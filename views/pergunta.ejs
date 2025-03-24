@@ -11,8 +11,20 @@
             <label>Resposta:</label>
             <textarea placeholder= "Digite sua resposta" class="form-control" name="body" id=""></textarea>
             <input type="hidden" name="question" value="<%= questions.id %>">
+            <br>
             <button type="submit" class="btn btn-success">Responda</button>
         </form>
+        </hr>
+        <h3>Respostas</h3>
+        </hr>
+        <% answers.forEach(answers => {%>
+            <br>
+            <div class="card">
+                <div class="card-body">
+                <p><%= answers.body %></p>
+                </div>
+            </div>
+        <% }) %>
     </div>
 </body>
 <%- include ('partials/footer.ejs'); %>
