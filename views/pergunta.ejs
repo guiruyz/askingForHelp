@@ -1,0 +1,18 @@
+<%- include ('partials/header.ejs'); %>
+<body>
+    <%- include ('partials/navbar.ejs'); %>
+    <div class="container">
+        <hr>
+        <h1><%= questions.title %></h1>
+        <p><%= questions.description %></p>
+        <hr>
+        <form method="POST" action="/responder">
+            <h3>Responda</h3>
+            <label>Resposta:</label>
+            <textarea placeholder= "Digite sua resposta" class="form-control" name="body" id=""></textarea>
+            <input type="hidden" name="question" value="<%= questions.id %>">
+            <button type="submit" class="btn btn-success">Responda</button>
+        </form>
+    </div>
+</body>
+<%- include ('partials/footer.ejs'); %>
